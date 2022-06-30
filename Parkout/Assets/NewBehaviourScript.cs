@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    [SerializeField]
     Camera cam;
+    [SerializeField]
     GameObject cube;
+    [SerializeField]
     SphereCollider sphere;
+    [SerializeField]
     Rigidbody capsule;
     // Start is called before the first frame update
     void Start()
@@ -36,7 +40,7 @@ public class NewBehaviourScript : MonoBehaviour
 遊戲經過時間：{Time.timeSinceLevelLoad}
 是否按下空白鍵：{Input.GetKeyDown(KeyCode.Space)}");
         cube.transform.LookAt(sphere.transform.position);
-        cube.transform.RotateAround(sphere.transform.position, Vector3.up, 1);
+        cube.transform.RotateAround(sphere.transform.position, Vector3.left, 100);
         capsule.AddForce(transform.up);
     }
 }
